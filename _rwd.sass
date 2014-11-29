@@ -1,0 +1,22 @@
+//
+// Trouble Starter breakpointer (.sass syntax version)
+// Usage: "@include respond-to($breakpoint) { your styles }"
+// Author: Piotr Krzoska
+//
+
+// breakpoints
+$mobile: 980px
+
+
+// mixins
+=respond-to($breakpoint)
+  @media all and (max-width: $breakpoint)
+    @content
+
+=respond-from($breakpoint)
+  @media all and (min-width: $breakpoint)
+    @content
+
+=respond-between($breakpoint-first, $breakpoint-second)
+  @media all and (min-width: $breakpoint-first) and (max-width: $breakpoint-second)
+    @content
