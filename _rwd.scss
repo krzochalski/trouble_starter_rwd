@@ -1,0 +1,29 @@
+//
+// Trouble Starter breakpointer (.scss syntax version)
+// Usage: "@include respond-to($breakpoint) { your styles }"
+// Author: Piotr Krzoska
+// https://github.com/krzochalski/trouble_starter_rwd
+//
+
+// breakpoints
+$mobile: 980px;
+
+
+// mixins
+@mixin respond-to($breakpoint) {
+  @media all and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-from($breakpoint) {
+  @media all and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-between($breakpoint-first, $breakpoint-second) {
+  @media all and (min-width: $breakpoint-first) and (max-width: $breakpoint-second) {
+    @content;
+  }
+}
